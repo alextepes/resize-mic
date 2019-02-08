@@ -27,7 +27,8 @@ class App {
 
     private mongoSetup(): void{
         mongoose.Promise = global.Promise;
-        mongoose.connect(config.mongo_url, {useNewUrlParser: true});
+        mongoose.connect(config.mongo_url, {useNewUrlParser: true})
+            .catch((err) => { });
     }
 
     private cacheStats(): void{
