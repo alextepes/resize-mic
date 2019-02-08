@@ -1,0 +1,29 @@
+version: "2"
+services:
+  node:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+    - NODE_ENV=development
+    volumes:
+    - ./:/home/node/app
+    - /Users/alex/Work/node-dev/imgresize/static/:/home/node/static/
+    ports:
+    - "8081:3000"
+    expose:
+    - "3000"
+    command: "npm run dev"
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+    - MONGO_DATA_DIR=/Users/alex/Work/node-dev/imgresize/mongo/data
+    - MONGO_LOG_DIR=/Users/alex/Work/node-dev/imgresize/mongo/logs
+    volumes:
+    - /Users/alex/Work/node-dev/imgresize/mongo/data:/data/db
+    ports:
+    - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null

@@ -1,0 +1,31 @@
+{
+  "name": "resizer-mic",
+  "version": "1.0.0",
+  "description": "TS image resizer",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 1",
+    "build": "npm install && tsc",
+    "dev": "nodemon",
+    "start": "node ./dist/index.js",
+    "prod": "npm run build && npm run start"
+  },
+  "author": "Alex Tepes <alex.tepes@yahoo.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "@types/mkdirp-promise": "^5.0.0",
+    "@types/sharp": "^0.21.2",
+    "body-parser": "^1.18.3",
+    "config": "^3.0.1",
+    "express": "^4.16.4",
+    "mkdirp-promise": "^5.0.1",
+    "mongoose": "^5.4.10",
+    "sharp": "^0.21.3",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

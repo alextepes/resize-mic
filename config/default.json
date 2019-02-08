@@ -1,0 +1,6 @@
+{
+  "node_port": 3000,
+  "static_path": "/home/node/static",
+  "images_path": "/home/node/static/images/",
+  "mongo_url": "mongodb://mongodb:27017/res"
+}
